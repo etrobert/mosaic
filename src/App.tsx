@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import Contract from "web3-eth-contract";
 
-import { AbiItem } from "web3-utils";
+import type { AbiItem } from "web3-utils";
+
+import type { Image } from "./types";
 
 import abi from "./abi.json";
 
@@ -17,9 +19,13 @@ const contract = new Contract(
   "0xF9f61dDa5D8152567D6F3e7586D4818Bf54A7B87"
 );
 
-contract.methods.getImage().call().then(console.log);
-
 function App() {
+  const [image, setImage] = useState<Image>();
+
+  useEffect(() => contract.methods.getImage().call().then(setImage), []);
+
+  useEffect(() => console.log(image), [image]);
+
   return <div className="App">App</div>;
 }
 
