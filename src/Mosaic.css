@@ -1,0 +1,4 @@
+.Mosaic {
+  display: grid;
+  grid-template-columns: repeat(var(--width), 1fr);
+}
