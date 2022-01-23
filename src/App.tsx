@@ -41,6 +41,41 @@ const contractABI: AbiItem[] = [
     type: "function",
   },
   {
+    inputs: [],
+    name: "getImage",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "bool",
+            name: "isSet",
+            type: "bool",
+          },
+          {
+            internalType: "uint8",
+            name: "red",
+            type: "uint8",
+          },
+          {
+            internalType: "uint8",
+            name: "green",
+            type: "uint8",
+          },
+          {
+            internalType: "uint8",
+            name: "blue",
+            type: "uint8",
+          },
+        ],
+        internalType: "struct Mosaic.Color[50][50]",
+        name: "",
+        type: "tuple[50][50]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [
       {
         internalType: "uint256",
@@ -88,10 +123,10 @@ Contract.setProvider(
 
 const contract = new Contract(
   contractABI,
-  "0x601C2B47793Ab8bcE46811A25b809D45ea3C4a86"
+  "0xF9f61dDa5D8152567D6F3e7586D4818Bf54A7B87"
 );
 
-contract.methods.image(1, 2).call().then(console.log);
+contract.methods.getImage().call().then(console.log);
 
 function App() {
   return (
