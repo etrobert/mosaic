@@ -44,3 +44,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Troubleshooting
+
+Web3.js and the create-react-app 5 have an incompability problem. Solved following [the web3.js doc](https://github.com/ChainSafe/web3.js#web3-and-create-react-app).
+
+The types of Web3.js seem to use `export` instead of `export default`. Temporarily fixed by replacing `export` by `export default` in their types in the `node_modules`.
