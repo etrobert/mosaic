@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Contract from "web3-eth-contract";
 
+import Mosaic from "./Mosaic";
 import abi from "./abi.json";
 
 import type { AbiItem } from "web3-utils";
@@ -25,7 +26,7 @@ function App() {
 
   useEffect(() => console.log(image), [image]);
 
-  return <div className="App">App</div>;
+  return <div className="App">{image && <Mosaic image={image} />}</div>;
 }
 
 export default App;
