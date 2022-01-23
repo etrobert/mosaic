@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
-
 import Contract from "web3-eth-contract";
 
-import type { AbiItem } from "web3-utils";
+import abi from "./abi.json";
 
+import type { AbiItem } from "web3-utils";
 import type { Image } from "./types";
 
-import abi from "./abi.json";
+import "./App.css";
 
 // @ts-expect-error setProvider is not defined
 Contract.setProvider(
