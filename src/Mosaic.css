@@ -1,4 +1,7 @@
 .Mosaic {
+  --pixel-size: 20px;
   display: grid;
-  grid-template-columns: repeat(var(--width), 1fr);
+  grid-template-columns: repeat(var(--width), var(--pixel-size));
+  grid-auto-rows: var(--pixel-size);
+  border: 1px solid black;
 }

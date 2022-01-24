@@ -1,3 +1,5 @@
+import PixelComponent from "./PixelComponent";
+
 import type { CSSProperties } from "react";
 import type { Image } from "./types";
 
@@ -16,7 +18,7 @@ const Mosaic = ({ image }: Props) => {
   return (
     <div className="Mosaic" style={style}>
       {image.flat().map((pixel, index) => (
-        <div key={index}>{pixel}</div>
+        <PixelComponent pixel={pixel} key={index} />
       ))}
     </div>
   );
